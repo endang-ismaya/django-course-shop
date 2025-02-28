@@ -1,6 +1,7 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from shop.models import Course
 
 
 def index(request):
-    return HttpResponse("Hello from the Shop App.")
+    courses = Course.objects.all()
+    return HttpResponse(courses)

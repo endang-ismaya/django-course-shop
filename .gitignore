@@ -176,3 +176,4 @@ cython_debug/
 # eimdev
 .vscode
 .DS_Store
+mynotes/
