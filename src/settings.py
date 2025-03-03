@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     # internal apps
     "shop.apps.ShopConfig",
     "api.apps.ApiConfig",
+    # external apps
+    "tastypie",
 ]
 
 MIDDLEWARE = [
