@@ -6,6 +6,5 @@ api = Api(api_name="v1")
 api.register(CourseResource())
 api.register(CategoryResource())
 
-urlpatterns = [
-    path("", include(api.urls)),
-]
+
+urlpatterns = [path("", include(api.urls), name="api__index")]
