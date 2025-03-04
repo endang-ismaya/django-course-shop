@@ -2,6 +2,7 @@ from tastypie.resources import ModelResource
 from shop.models import Category, Course
 from tastypie.authorization import Authorization
 from api.authentication import CustomApiKeyAuthentication
+from tastypie.exceptions import BadRequest
 
 
 class CategoryResource(ModelResource):
@@ -31,3 +32,9 @@ class CourseResource(ModelResource):
 
     def dehydrate_title(self, bundle):
         return bundle.data["title"].upper()
+
+    def delete_list(self, request=None, **kwargs):
+        """
+        Prevent deletion of all courses.
+        """
+        raise BadRequest("Deleting all courses is not allowed.")
